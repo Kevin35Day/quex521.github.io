@@ -1,4 +1,4 @@
-![Meizhuo logo](../img/favicon.ico)
+![logo](../img/favicon.ico)
 
 # [QueJay](.)
 
