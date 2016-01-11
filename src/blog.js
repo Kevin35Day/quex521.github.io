@@ -6,7 +6,7 @@
  */
 (function($) {
     'use strict';
-    var app_name = '';
+    var app_name = 'quex521.github.io';
     var blog_base = '';
     var img_root = 'img';
     var markdown_root = 'p';
