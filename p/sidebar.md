@@ -1,10 +1,8 @@
 ![Meizhuo logo](../img/favicon.ico)
 
-# [silentor](.)
+# [QueJay](.)
 
-> Be a silentor, focus on writting your words down
+> 要对得起这流逝的岁月
 
-- [项目](projects/index.md)
-- [文档](docs/readme.md)
-- [专业](profession.md)
-- [关于](about.md)
+- [博文列表](blogs/index.md)
+- [关于我](about.md)
