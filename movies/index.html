@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>-----最新视频----</title>
+<style type="text/css">
+.video_item{
+	float:left;
+	padding:18px;
+	margin:2px;
+}
+.video_item:hover{
+	margin:1px;
+	border:1px solid #166fc9;
+}
+.video_title{
+	width:200;
+	text-align:center;
+	color:#0079ff;
+}
+.video_title:link,.video_title:visited{
+	text-decoration:none;
+	color:#0099ff;
+}
+.video_title:hover{
+	text-decoration:underline;
+	color:#166fc9;
+}
+</style>
+<script src="jquery.min.js"></script>
+<script type='text/javascript'>
+	$(document).ready(function(){
+			$.ajax({
+				type:"Get",
+				url:"data.json",
+				dataType:"json",
+				success:function(data){
+					
+					if(data.total>0)
+					{
+						add_html="<div class='video_item'>test";
+						
+						$.each(data.data,function(idx,item){
+							html+="<a style='position:relative;display:block;' href='#'><img src='"+item.img+
+							"' alt='"+item.title+"' title='"+item.title+"' height='250' width='200'></img></a><a class='video_title' href='#'>"+
+							item.title+"</a>";
+						});
+						add_html+="</div>";
+						$("#list").html(add_html);
+					}
+				}
+			});
+	});
+</script>
+</head>
+<body>
+<div id="list">
+</div>
+</body>
+</html>
