@@ -1,8 +1,8 @@
 {
 	"data":{
-		"tangrenjie":{
-			"title":"tangrenjie",
-			"img":"http://ww3.sinaimg.cn/large/0069qWFHgw1ezt1eljddbj30bw0gojw1.jpg",
+		"唐人街探案":{
+			"title":"唐人街探案（2015）",
+			"img":"img/18.jpg",
 			"date":"2015-12-31",
 			"time":"135",
 			"language":"hanyu/taiyu",
@@ -14,6 +14,6 @@
 			"summary":"summary..."
 		}
 	},
-	"total":"18",
+	"total":"1",
 	"status":200
 }

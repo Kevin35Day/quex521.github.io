@@ -24,7 +24,6 @@
 .video_title:hover{
 	text-decoration:underline;
 	color:#166fc9;
-	margin-top:5px;
 }
 </style>
 <script src="jquery.min.js"></script>
@@ -35,16 +34,16 @@
 				url:"data.json",
 				dataType:"json",
 				success:function(data){
-				//	alert("success");
-					add_html="<div class='video_item'>";
 					
-					$.each(data.data,function(idx,item){
-						html+="<a style='position:relative;display:block;' href='#'><img src='"+item.img+
-						"' alt='"+item.title+"' title='"+item.title+"' height='250' width='200'></img></a><a class='video_title' href='#'>"+
-						item.title+"</a>";
-					});
-					add_html+="</div>";
-					$("#list").html(add_html);
+						add_html="<div class='video_item'>";
+						
+						$.each(data.data,function(idx,item){
+							add_html+="<a style='position:relative;display:block;' href='#'><img src='"+item.img+
+							"' alt='"+item.title+"' title='"+item.title+"' height='250' width='200'></img></a><a class='video_title' href='#'>"+
+							item.title+"</a>";
+						});
+						add_html+="</div>";
+						$("#list").html(add_html);
 				}
 			});
 	});
@@ -52,12 +51,7 @@
 </head>
 <body>
 <div id="list">
-<div class='video_item'>
-<a style='position:relative;display:block;' href='#'>
-<img src='http://ww3.sinaimg.cn/large/0069qWFHgw1ezt1eljddbj30bw0gojw1.jpg' alt='' title='' height='250' width='200'></img>
-</a>
-<a class='video_title' href='ed2k://|file|%E5%94%90%E4%BA%BA%E8%A1%97%E6%8E%A2%E6%A1%88.Detective.Chin.Tang.2015.TC720P.X264.AAC.Mandarin.CHS-ENG.DYTT.mp4|2966195148|F7B6DFDBE54927BDD9C340B9040C7352|h=SSDZZ3LKI2ZAAVWMX3IJXSI2NI5QMBMG|'>唐人街探案 (2015)</a>
-</div>
+
 </div>
 </body>
 </html>
