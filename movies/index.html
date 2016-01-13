@@ -32,10 +32,10 @@
 	$(document).ready(function(){
 			$.ajax({
 				type:"Get",
-				url:"http://quex521.github.io/movies/data.json",
+				url:"data.json",
 				dataType:"json",
 				success:function(data){
-					
+					alert("success");
 					if(data.total>0)
 					{
 						add_html="<div class='video_item'>";
