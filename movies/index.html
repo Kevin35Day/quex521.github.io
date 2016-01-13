@@ -42,6 +42,16 @@
     font-size: 14px;
     color: #333;
 }
+.tag,.tstag,.dvdtag{
+    background:#09C878;
+    padding: 0 5px;
+    color: #FFF;
+    font-size: 16px;
+    right:2px;bottom:6px;
+    position:absolute;
+    border: none;
+	cursor:pointer;
+}
 </style>
 <script src="jquery.min.js"></script>
 <script type='text/javascript'>
@@ -61,7 +71,7 @@
 						else if(item.path.ed2k)
 							path=item.path.ed2k;
 						add_html+="<div class='video_item'><a style='position:relative;display:block;' href='"+path+"'><img src='"+item.img+
-						"' alt='"+idx+"' title='"+idx+"' height='250' width='200'></img></a>";
+						"' alt='"+idx+"' title='"+idx+"' height='250' width='200'></img><button class=\"tag\">"+item.tag+"</button></a>";
 						add_html+=" <div class='meta'><div style='width:100%;overflow:hidden;height:20px;'><a href='"+path+
 						"' target='_blank' title='"+idx+"' class='movie-name'>"+idx+"</a><span class='otherinfo'> - "+item.score+
 						"分</span></div><div class='otherinfo'>类型："+item.type+"</div></div></div>";
