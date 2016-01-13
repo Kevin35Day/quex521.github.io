@@ -56,14 +56,14 @@
 						url="";
 						$.each(data.data,function(idx,item){
 							
-							if(item.url.magnet!=null)
+							if(!item.url.magnet)
 								url=item.url.magnet;
-							else if(item.url.ed2k!=null)
+							else if(!item.url.ed2k)
 								url=item.url.ed2k;
 							add_html+="<div class='video_item'><a style='position:relative;display:block;' href='"+url+"'><img src='"+item.img+
 							"' alt='"+idx+"' title='"+idx+"' height='250' width='200'></img></a>";
 							add_html+=" <div class='meta'><div style='width:100%;overflow:hidden;height:20px;'><a href='"+url+
-							"' target='_blank' title='"+idx+"' class='movie-name'>"+idx+"</a><span class='otherinfo'> - "+item.grade+
+							"' target='_blank' title='"+idx+"' class='movie-name'>"+idx+"</a><span class='otherinfo'> - "+item.score+
 							"分</span></div><div class='otherinfo'>类型："+item.type+"</div></div></div>";
 						});
 						$("#list").html(add_html);
