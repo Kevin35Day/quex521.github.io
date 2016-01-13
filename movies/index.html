@@ -36,10 +36,15 @@
 				success:function(data){
 					
 						add_html="<div class='video_item'>";
-						
+						url="";
 						$.each(data.data,function(idx,item){
-							add_html+="<a style='position:relative;display:block;' href='#'><img src='"+item.img+
-							"' alt='"+item.title+"' title='"+item.title+"' height='250' width='200'></img></a><a class='video_title' href='#'>"+
+							
+							if(item.url.magnet!=null)
+								url=item.url.magnet;
+							else if(item.url.ed2k!=null)
+								url=item.url.ed2k;
+							add_html+="<a style='position:relative;display:block;' href='"+url+"'><img src='"+item.img+
+							"' alt='"+item.title+"' title='"+item.title+"' height='250' width='200'></img></a><a class='video_title' href='"+url+"'>"+
 							item.title+"</a>";
 						});
 						add_html+="</div>";
