@@ -35,19 +35,16 @@
 				url:"data.json",
 				dataType:"json",
 				success:function(data){
-					alert("success");
-					if(data.total>0)
-					{
-						add_html="<div class='video_item'>";
-						
-						$.each(data.data,function(idx,item){
-							html+="<a style='position:relative;display:block;' href='#'><img src='"+item.img+
-							"' alt='"+item.title+"' title='"+item.title+"' height='250' width='200'></img></a><a class='video_title' href='#'>"+
-							item.title+"</a>";
-						});
-						add_html+="</div>";
-						$("#list").html(add_html);
-					}
+				//	alert("success");
+					add_html="<div class='video_item'>";
+					
+					$.each(data.data,function(idx,item){
+						html+="<a style='position:relative;display:block;' href='#'><img src='"+item.img+
+						"' alt='"+item.title+"' title='"+item.title+"' height='250' width='200'></img></a><a class='video_title' href='#'>"+
+						item.title+"</a>";
+					});
+					add_html+="</div>";
+					$("#list").html(add_html);
 				}
 			});
 	});
