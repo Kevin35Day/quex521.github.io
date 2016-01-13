@@ -25,6 +25,23 @@
 	text-decoration:underline;
 	color:#166fc9;
 }
+.otherinfo{
+    margin-top: 3px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    height: 18px;
+    overflow: hidden;
+    width: 100%;
+    color: #7E7E7E;
+}
+.meta{
+    margin-top:5px;
+}
+.movie-name{
+    font-size: 14px;
+    color: #333;
+}
 </style>
 <script src="jquery.min.js"></script>
 <script type='text/javascript'>
@@ -44,8 +61,10 @@
 							else if(item.url.ed2k!=null)
 								url=item.url.ed2k;
 							add_html+="<div class='video_item'><a style='position:relative;display:block;' href='"+url+"'><img src='"+item.img+
-							"' alt='"+item.title+"' title='"+item.title+"' height='250' width='200'></img></a><a class='video_title' href='"+url+"'>"+
-							item.title+"</a></div>";
+							"' alt='"+idx+"' title='"+idx+"' height='250' width='200'></img></a></div>";
+							add_html+=" <div class='meta'><div style='width:100%;overflow:hidden;height:20px;'><a href='"+url+
+							"' target='_blank' title='"+idx+"' class='movie-name'>"+idx+"</a><span class='otherinfo'> - "+item.grade+
+							"分</span></div><div class='otherinfo'>类型："+item.type+"</div></div>";
 						});
 						$("#list").html(add_html);
 				}
