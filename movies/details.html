@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Quex</title>
+    <meta name="description" content="">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<style type="text/css">
+	table{margin:20px;}
+	td{border:1px solid #166fc9;text-align:center;}
+	.table_head{
+		width:100px;
+	}
+	</style>
+	<script src="jquery.min.js"></script>
+	<script type='text/javascript'>
+	$(document).ready(function(){
+		url=document.location.href;
+		id=decodeURIComponent(url.substring(url.indexOf('?')+4));
+		$.ajax({
+			type:"Get",
+			url:"data.json",
+			dataType:"json",
+			success:function(data){
+				
+				add_html="<h2 style='text-align:center'>"+id+"</h2>";
+				path="";
+				add_html+="<table style='margin-bottom:10px;font-size:15px;'><tbody>";
+				$.each(data.data,function(idx,item){
+					if(idx==id)
+					{
+						add_html+="<tr><td class='table_head'>导演</td><td>"+item.director+"</td></tr>";
+						add_html+="<tr><td class='table_head'>编剧</td><td>"+item.writer+"</td></tr>";
+						add_html+="<tr><td class='table_head'>主演</td><td>"+item.actor+"</td></tr>";
+						add_html+="<tr><td class='table_head'>类型</td><td>"+item.type+"</td></tr>";
+						add_html+="<tr><td class='table_head'>制片国家</td><td>"+item.country+"</td></tr>";
+						add_html+="<tr><td class='table_head'>语言</td><td>"+item.language+"</td></tr>";
+						add_html+="<tr><td class='table_head'>上映时间</td><td>"+item.date+"</td></tr>";
+						add_html+="<tr><td class='table_head'>片长</td><td>"+item.time+"</td></tr>";
+						add_html+="<tr><td class='table_head'>又名</td><td>"+item.alias+"</td></tr>";
+						add_html+="<tr><td class='table_head'>评分</td><td>"+item.score+"</td></tr>";
+						if(item.path.yunpan)
+						add_html+="<tr><td class='table_head'>百度云</td><td><a href='"+item.path.yunpan+"'>"+idx+" - 百度云</a></td></tr>";
+						if(item.path.magnet)
+						add_html+="<tr><td class='table_head'>磁力</td><td><a href='"+item.path.magnet+"'>"+idx+" - 磁力链接</a></td></tr>";
+						if(item.path.ed2k)
+						add_html+="<tr><td class='table_head'>磁力</td><td><a href='"+item.path.ed2k+"'>"+idx+" - ed2k链接</a></td></tr>";
+						add_html+="<tr><td class='table_head'>剧情介绍：</td><td style='text-align:left;'>"+item.summary+"</td></tr>";
+					}
+				});
+				add_html+="</tbody></table>";
+				$("#detail").html(add_html);
+			}
+		});
+	});
+	</script>
+</head>
+
+<body>
+<div id="detail">
+</div>
+</body>
+
+</html>

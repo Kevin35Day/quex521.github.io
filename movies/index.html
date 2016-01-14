@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset='utf-8'>
+<meta name="description" content="">
+<!-- responsive -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <title>-----最新视频----</title>
 <style type="text/css">
 html{
@@ -65,14 +71,9 @@ html{
 					add_html="";
 					path="";
 					$.each(data.data,function(idx,item){
-						
-						if(item.path.magnet)
-							path=item.path.magnet;
-						else if(item.path.ed2k)
-							path=item.path.ed2k;
-						add_html+="<div class='video_item'><a style='position:relative;display:block;' href='"+path+"'><img src='"+item.img+
+						add_html+="<div class='video_item'><a style='position:relative;display:block;' target='_blank' href='details.html?id="+encodeURIComponent(idx)+"'><img src='"+item.img+
 						"' alt='"+idx+"' title='"+idx+"' height='250' width='200'></img><button class=\"tag\">"+item.tag+"</button></a>";
-						add_html+=" <div class='meta'><div style='width:200px;overflow:hidden;height:20px;'><a href='"+path+
+						add_html+=" <div class='meta'><div style='width:200px;overflow:hidden;height:20px;'><a href='details.html?id="+encodeURIComponent(idx)+
 						"' target='_blank' title='"+idx+"' class='movie-name'>"+idx+"</a><span class='otherinfo'> - "+item.score+
 						"分</span></div><div class='otherinfo'>类型："+item.type+"</div></div></div>";
 					});
