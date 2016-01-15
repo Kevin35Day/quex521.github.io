@@ -12,7 +12,8 @@
 - 联系方式：
 	- QQ:787821373
 	- Skype:quejaysky
-	- WeChat:mrxiaonline
+	- WeChat:mrxiaonline  
+
 >学习轨迹  
 
 - 2013年寒假自学C语言基础  
