@@ -9,7 +9,10 @@
 - 学历：本科  
 - 学校：HDU  
 - 专业：自动化 
-
+- 联系方式：
+	- QQ:787821373
+	- Skype:quejaysky
+	- WeChat:mrxiaonline
 >学习轨迹  
 
 - 2013年寒假自学C语言基础  
