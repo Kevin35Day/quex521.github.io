@@ -20,6 +20,7 @@
 	$(document).ready(function(){
 		url=document.location.href;
 		id=decodeURIComponent(url.substring(url.indexOf('?')+4));
+		document.title=id;
 		$.ajax({
 			type:"Get",
 			url:"data.json",
@@ -43,7 +44,17 @@
 						add_html+="<tr><td class='table_head'>又名</td><td>"+item.alias+"</td></tr>";
 						add_html+="<tr><td class='table_head'>评分</td><td>"+item.score+"</td></tr>";
 						if(item.path.yunpan)
-						add_html+="<tr><td class='table_head'>百度云</td><td><a href='"+item.path.yunpan+"'>"+idx+" - 百度云</a></td></tr>";
+						{
+							yunpan_url=item.path.yunpan;
+							pw_index=yunpan_url.indexOf('|');
+							password="";
+							if(pw_index!=-1)
+							{
+								password="密码："+yunpan_url.substring(pw_index+1);
+								yunpan_url=yunpan_url.substring(0,pw_index);
+							}
+							add_html+="<tr><td class='table_head'>百度云</td><td><a href='"+yunpan_url+"'>"+idx+" - 百度云</a>"+password+"<br/>如果取消可以加我好友:summer_jqx</td></tr>";
+						}
 						if(item.path.magnet)
 						add_html+="<tr><td class='table_head'>磁力</td><td><a href='"+item.path.magnet+"'>"+idx+" - 磁力链接</a></td></tr>";
 						if(item.path.ed2k)
