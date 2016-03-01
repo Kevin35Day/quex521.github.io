@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name="description" content="">
+<!-- responsive -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<title>信息查询</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/style2.css" />
+<style type="text/css">
+.demo{width:860px; margin:60px auto 10px auto}
+</style>
+<script src="jquery.min.js"></script>
+<script type='text/javascript'>
+	function search(){
+			key = document.getElementById("keyword").value;
+			if(key)
+			{
+				$.ajax({
+					type:"get",
+					url:"teacher.json",
+					dataType:"json",
+					success:function(data){
+						add_html="";
+						flag=0;
+						$.each(data.teacher,function(idx,item){
+							if(isContains(item.name,key) || isContains(item.lessons,key) || isContains(item.apartment,key))
+							{
+								flag=1;
+								add_html+="<li class='plan'><ul class='planContainer'>"+
+												"<li class='title'><h2>"+(item.name)+"</h2></li>"+
+												"<li><ul class='options'>";
+									add_html+="<li>"+check(item.apartment)+"</li>";
+									add_html+="<li>"+check(item.office)+"</li>";
+									add_html+="<li>"+check(item.telphone)+"</li>";
+									add_html+="<li>"+check(item.email)+"</li>";
+									add_html+="<li>"+check(item.lessons)+"</li>";
+								add_html+="</ul></li></ul></li>";
+							}
+						});
+						if(flag==0)
+						{
+							add_html+="<p style='text-align:center;padding:30px;font-size:30px'>未搜索到...</p>";
+						}
+						$("#plans").html(add_html);
+					}
+				});
+			}
+	}
+	function check(s){
+		if(!s)
+			return "&nbsp;";
+		else
+			return s;
+	}
+	function isContains(str, substr) {
+		return str.indexOf(substr) >= 0;
+	}
+ 
+</script>
+</head>
+<body>
+	<div id="main">
+		<div id="search_form" style="text-align:center;padding:30px;font-size:16px">
+		<input style="width:250px;" type="text" id="keyword" onKeyPress="if(event.keyCode==13){search();return false;}" placeholder="输入 老师、课程、学院...">
+		<input onClick="search();return false;" id="search" type="button" value="查 询">
+		</div>
+		<div class="demo" id="pricePlans">
+			<ul id='plans'>
+			</ul>
+			
+		</div>
+	</div>
+</body>
+</html>

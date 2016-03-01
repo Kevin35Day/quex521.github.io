@@ -1,0 +1,84 @@
+{
+	"teacher":{
+		"lizhu": {
+			"name": "李竹",
+			"office": "2教中309",
+			"apartment": "电子信息学院",
+			"telphone": "86919161",
+			"email": "LZ1126@hdu.edu.cn",
+			"lessons": "模拟电子电路"
+		},
+		"zuoyan": {
+			"name": "左燕",
+			"office": "",
+			"apartment": "自动化学院",
+			"telphone": "13858151311",
+			"email": "yzuo@hdu.edu.cn",
+			"lessons": "过程控制"
+		},
+		"liuweifeng": {
+			"name": "刘伟峰",
+			"office": "2教南412",
+			"apartment": "自动化学院",
+			"telphone": "18968145669",
+			"email": "liuwf@hdu.edu.cn",
+			"lessons": "现代控制理论"
+		},
+		"chenxiao": {
+			"name": "陈霄",
+			"office": "科技馆916",
+			"apartment": "自动化学院",
+			"telphone": "15068102725",
+			"email": "",
+			"lessons": "电机与拖动基础"
+		},
+		"baijianjun": {
+			"name": "柏建军",
+			"office": "2教南508",
+			"apartment": "自动化学院",
+			"telphone": "13857153960",
+			"email": "baijianjun@hdu.edu.cn",
+			"lessons": "电气控制与PLC应用"
+		},
+		"xuhuan": {
+			"name": "许欢",
+			"office": "信息与控制研究所",
+			"apartment": "自动化学院",
+			"telphone": "",
+			"email": "xuhuan@hdu.edu.cn",
+			"lessons": "测试技术与传感器、软件技术"
+		},
+		"baijianjun": {
+			"name": "陈华杰",
+			"office": "科技馆916",
+			"apartment": "自动化学院",
+			"telphone": "13093701169",
+			"email": "chj247@hdu.edu.cn",
+			"lessons": "微机原理与接口技术"
+		},
+		"wangqian": {
+			"name": "王茜",
+			"office": "",
+			"apartment": "自动化学院",
+			"telphone": "",
+			"email": "wq@hdu.edu.cn",
+			"lessons": "过程控制、专业英语"
+		},
+		"zouhongbo": {
+			"name": "邹洪波",
+			"office": "",
+			"apartment": "自动化学院",
+			"telphone": "",
+			"email": "zouhb@hdu.edu.cn",
+			"lessons": "电机与拖动基础"
+		},  
+		"caijiuwen": {
+			"name": "曹九稳",
+			"office": "2教南506  ",
+			"apartment": "自动化学院",
+			"telphone": "86919131转506",
+			"email": "jwcao@hdu.edu.cn",
+			"lessons": "复变函数与积分变换"
+		}
+	}
+}
